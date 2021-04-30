@@ -11,7 +11,8 @@ GRAPHS = ["Graphs/Cities/Cities.mtx",
           "Graphs/mycielskian11/mycielskian11.mtx",
           "Graphs/Sandi_sandi/Sandi_sandi.mtx",
           "Graphs/Trec6/Trec6.mtx",
-          "Graphs/WorldCities/WorldCities.mtx"]
+          "Graphs/WorldCities/WorldCities.mtx",
+          "Graphs/Trec13/Trec13.mtx"]
 
 ##################################################
 # Sinkhorn-Knopp Scaling
@@ -161,7 +162,7 @@ def two_sided(A):
 ##################################################
 
 #Graph Index
-graph_index = 2
+graph_index = 6
 
 #Graph Data
 G = mmread(GRAPHS[graph_index])
