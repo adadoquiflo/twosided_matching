@@ -2,6 +2,7 @@ import random
 import numpy as np
 from scipy.io import mmread
 from scipy.sparse.csgraph import maximum_bipartite_matching
+import time
 ##################################################
 # Constants
 ##################################################
@@ -172,8 +173,12 @@ A = np.where(G.toarray() != 0, 1, 0)
 print(GRAPHS[graph_index])
 print("Dim:", G.shape, "Edges:", G.nnz)
 print(A)
+start = time.process_time()
 M = two_sided(A)
+end = time.process_time()
 print("Matching Cardinality:", len(M))#, "Matching:", M)
 max_cardinality = len(np.where(maximum_bipartite_matching(G) != -1)[0])
 print("Maximum Cardinality:", max_cardinality)
 print("Ratio:", len(M) / max_cardinality)
+print("Process Time:", end - start, "seconds")
+
